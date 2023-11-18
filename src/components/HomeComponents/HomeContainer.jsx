@@ -6,8 +6,8 @@ function HomeContainer(){
 			<div className="hero-content text-center">
 				<div className="max-w-md">
 					<h1 className="text-8xl font-bungee">OPENCTF</h1>
-					<p className="py-6">A modular CTF platform</p>
-					<Link to="/login" className="btn">Get Started</Link>
+					<p className="py-6 font-jetbrains text-xl">A modular CTF platform</p>
+					<Link to="/login" className="btn font-jetbrains">Get Started</Link>
 				</div>
 			</div>
 		</div>
