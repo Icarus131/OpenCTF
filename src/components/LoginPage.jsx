@@ -26,7 +26,7 @@ function LoginPage(){
 						<div className="flex flex-col gap-6 w-full bg-base-200">
 							<input type="text" placeholder="Username" className="input input-bordered bg-base-200 w-full max-w-xs" />	
 							<input type="password" placeholder="Password" className="input input-bordered bg-base-200 w-full max-w-xs" />	
-							<Link to="/app" className="btn btn-secondary w-32">Login</Link>
+							<Link to="/app" className="btn btn-primary w-32">Login</Link>
 						</div>
 					</>
 				):(
@@ -40,7 +40,7 @@ function LoginPage(){
 							<input type="text" placeholder="Username" className="input input-bordered bg-base-200 w-full max-w-xs" />	
 							<input type="password" placeholder="Password" className="input input-bordered bg-base-200 w-full max-w-xs" />	
 							<input type="password" placeholder="Re-enter Password" className="input input-bordered bg-base-200 w-full max-w-xs" />	
-							<Link to="/app" className="btn btn-secondary w-32">Sign Up</Link>
+							<Link to="/app" className="btn btn-primary w-32">Sign Up</Link>
 						</div>
 					</>
 				)}

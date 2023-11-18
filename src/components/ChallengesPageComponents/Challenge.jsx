@@ -5,7 +5,7 @@ function Challenge({Title, Description}){
 				<h2 className="card-title">{Title}</h2>
 				<p>{Description}</p>
 				<div className="card-actions justify-end">
-					<button className="btn btn-secondary">Solve</button>
+					<button className="btn btn-primary">Solve</button>
 				</div>
 			</div>
 		</div>
