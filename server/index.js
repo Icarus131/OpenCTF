@@ -2,6 +2,7 @@ const express = require("express")
 const cors = require("cors")
 const bcrypt = require("bcryptjs")
 const {MongoClient} = require("mongodb")
+const ObjectId = require("mongodb").ObjectId
 
 const app=express()
 
@@ -51,6 +52,31 @@ app.post("/login", async (req,res) => {
 		res.status(401).send("Wrong password")
 	}else{
 		res.status(200).send(user.username)
+	}
+})
+
+//get challenges
+app.get("/getchallenges", async (req,res) => {
+	const challenges = await dbclient.collection("challenges").find({}).toArray()
+	res.status(200).send(challenges)
+})
+
+app.put("/verifyflag", async (req,res) => {
+	const title = req.body.title
+	const userflag = req.body.flag
+	const username = req.body.username
+
+	const resp = await dbclient.collection("challenges").findOne({ title })
+	let solvedBy = resp.solvedBy
+
+	if(resp.flag===userflag){
+		if(!(solvedBy.includes(username))){
+			solvedBy.push(username)
+		}
+		dbclient.collection("challenges").updateOne({title},{$set: {solvedBy: solvedBy}})
+		res.status(200).send(true)
+	}else{
+		res.status(400).send(false)
 	}
 })
 

@@ -28,17 +28,24 @@ function LoginPage(){
 		}else if(password!==repassword){
 			errorToast("Passwords do not match")
 		}else{
+			let resp
 			try{
-				let resp = await axios.post("http://127.0.0.1:5000/newaccount",{"username": username, "password": password})
-				successToast("Account created")
-			}catch{
-				errorToast("Username exists")
+				resp = await axios.post("http://127.0.0.1:5000/newaccount",{"username": username, "password": password})
+				successToast(resp.data)
+			}catch(error){
+				errorToast(error.response.data)
 			}
 		}
 	}
 
 	const handleRegister = (e) => {
 		Register(username,password,repassword)
+	}
+
+	const handleRegisterEnter = (e) => {
+		if(e.key === "Enter"){
+			Register(username,password,repassword)
+		}
 	}
 
 	const Login = async (username, password) => {
@@ -60,6 +67,12 @@ function LoginPage(){
 		Login(username, password)
 	}
 
+	const handleLoginEnter = (e) => {
+		if(e.key === "Enter"){
+			Login(username,password)
+		}
+	}
+
 	return(
 		<div className="flex flex-col items-center justify-center h-screen font-jetbrains">
 			<div className="navbar bg-base-100 absolute top-0">
@@ -77,8 +90,8 @@ function LoginPage(){
 						</div>
 
 						<div className="flex flex-col gap-6 w-full bg-base-200">
-							<input type="text" placeholder="Username" className="input input-bordered bg-base-200 w-full max-w-xs" onChange={e => setUsername(e.target.value)}/>	
-							<input type="password" placeholder="Password" className="input input-bordered bg-base-200 w-full max-w-xs" onChange={e => setPassword(e.target.value)}/>	
+							<input type="text" placeholder="Username" className="input input-bordered bg-base-200 w-full max-w-xs" onChange={e => setUsername(e.target.value)} onKeyDown={handleLoginEnter}/>	
+							<input type="password" placeholder="Password" className="input input-bordered bg-base-200 w-full max-w-xs" onChange={e => setPassword(e.target.value)} onKeyDown={handleLoginEnter}/>	
 							<button className="btn btn-primary w-32" onClick={handleLogin}>Login</button>
 						</div>
 					</>
@@ -90,9 +103,9 @@ function LoginPage(){
 						</div>
 
 						<div className="flex flex-col gap-6 w-full bg-base-200">
-							<input type="text" placeholder="Username" name="username" className="input input-bordered bg-base-200 w-full max-w-xs" onChange={ (e) => {setUsername(e.target.value)}}/>	
-							<input type="password" placeholder="Password" className="input input-bordered bg-base-200 w-full max-w-xs" onChange={e => setPassword(e.target.value)}/>	
-							<input type="password" placeholder="Re-enter Password" className="input input-bordered bg-base-200 w-full max-w-xs" onChange={e => setRePassword(e.target.value)}/>	
+							<input type="text" placeholder="Username" name="username" className="input input-bordered bg-base-200 w-full max-w-xs" onChange={ (e) => {setUsername(e.target.value)}} onKeyDown={handleRegisterEnter}/>
+							<input type="password" placeholder="Password" className="input input-bordered bg-base-200 w-full max-w-xs" onChange={e => setPassword(e.target.value)} onKeyDown={handleRegisterEnter}/>
+							<input type="password" placeholder="Re-enter Password" className="input input-bordered bg-base-200 w-full max-w-xs" onChange={e => setRePassword(e.target.value)} onKeyDown={handleRegisterEnter}/>
 							<button className="btn btn-primary w-32" onClick={handleRegister}>Sign Up</button>
 						</div>
 					</>
