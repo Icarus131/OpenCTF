@@ -18,17 +18,7 @@ function MainPageNavbar(){
 			<div className="flex-none">
 				<ul className="menu menu-horizontal px-1 font-jetbrains text-lg">
 					<li><Link to="/app">Challenges</Link></li>
-					<li>
-						<details>
-							<summary>
-								Profile
-							</summary>
-							<ul className="p-2 bg-base-200">
-								<li><a>Profile</a></li>
-								<li><button className="text-error hover:text-error" onClick={Logout}>Logout</button></li>
-							</ul>
-						</details>
-					</li>
+					<li><button className="text-error hover:text-error" onClick={Logout}>Logout</button></li>
 				</ul>
 			</div>
 		</div>

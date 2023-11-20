@@ -51,7 +51,7 @@ app.post("/login", async (req,res) => {
 	if(!isCorrect){
 		res.status(401).send("Wrong password")
 	}else{
-		res.status(200).send(user.username)
+		res.status(200).send(user)
 	}
 })
 

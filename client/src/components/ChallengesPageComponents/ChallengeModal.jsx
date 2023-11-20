@@ -3,7 +3,7 @@ import { useAuth } from "../../scripts/auth"
 import axios from "axios"
 import {errorToast, successToast} from "../../scripts/toasts"
 
-function ChallengeModal({title,description,id}){
+function ChallengeModal({title,description,id,file}){
 	const [flag, setFlag] = useState("")
 	const auth = useAuth()
 
@@ -31,6 +31,7 @@ function ChallengeModal({title,description,id}){
 				<div className="flex flex-col items-left justify-center gap-4">
 					<p className="font-bold text-lg">{title}</p>
 					<p>{description}</p>
+					<a className="link link-primary" href={"/"+file} target="_blank">{file}</a>
 					<input className="input input-bordered bg-base-200 w-full" onChange={e => setFlag(e.target.value)}/>
 					<button className="btn btn-primary w-20" onClick={handleSubmit}>Submit</button>
 				</div>

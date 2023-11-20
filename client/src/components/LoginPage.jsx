@@ -90,7 +90,7 @@ function LoginPage(){
 						</div>
 
 						<div className="flex flex-col gap-6 w-full bg-base-200">
-							<input type="text" placeholder="Username" className="input input-bordered bg-base-200 w-full max-w-xs" onChange={e => setUsername(e.target.value)} onKeyDown={handleLoginEnter}/>	
+							<input type="text" autoFocus placeholder="Username" className="input input-bordered bg-base-200 w-full max-w-xs" onChange={e => setUsername(e.target.value)} onKeyDown={handleLoginEnter}/>	
 							<input type="password" placeholder="Password" className="input input-bordered bg-base-200 w-full max-w-xs" onChange={e => setPassword(e.target.value)} onKeyDown={handleLoginEnter}/>	
 							<button className="btn btn-primary w-32" onClick={handleLogin}>Login</button>
 						</div>
@@ -103,7 +103,7 @@ function LoginPage(){
 						</div>
 
 						<div className="flex flex-col gap-6 w-full bg-base-200">
-							<input type="text" placeholder="Username" name="username" className="input input-bordered bg-base-200 w-full max-w-xs" onChange={ (e) => {setUsername(e.target.value)}} onKeyDown={handleRegisterEnter}/>
+							<input type="text" autoFocus placeholder="Username" name="username" className="input input-bordered bg-base-200 w-full max-w-xs" onChange={ (e) => {setUsername(e.target.value)}} onKeyDown={handleRegisterEnter}/>
 							<input type="password" placeholder="Password" className="input input-bordered bg-base-200 w-full max-w-xs" onChange={e => setPassword(e.target.value)} onKeyDown={handleRegisterEnter}/>
 							<input type="password" placeholder="Re-enter Password" className="input input-bordered bg-base-200 w-full max-w-xs" onChange={e => setRePassword(e.target.value)} onKeyDown={handleRegisterEnter}/>
 							<button className="btn btn-primary w-32" onClick={handleRegister}>Sign Up</button>
