@@ -3,7 +3,7 @@ import ChallengeModal from "./ChallengeModal"
 function Challenge({Title, Description, id, Solved, File}){
 	return(
 		<>
-			<ChallengeModal title={Title} description={Description} id={id} Solved={Solved}/>
+			<ChallengeModal title={Title} description={Description} id={id} Solved={Solved} file={File}/>
 			<div className="card w-96 bg-base-200 shadow-xl font-jetbrains">
 				<div className="card-body">
 					<h2 className="card-title">{Title}</h2>

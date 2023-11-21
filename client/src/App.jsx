@@ -6,7 +6,6 @@ import LoginPage from "./components/LoginPage"
 import ChallengesPage from "./components/ChallengesPage"
 import {AuthProvider} from "./scripts/auth"
 import {Toaster} from 'react-hot-toast';
-import AdminPage from './components/AdminPage';
 
 function App() {
 	return (
@@ -18,7 +17,6 @@ function App() {
 					<Route path="about" element={<AboutUs/>}></Route>
 					<Route path="login" element={<LoginPage/>}></Route>
 					<Route path="app" element={<ChallengesPage/>}></Route>
-					<Route path="admin" element={<AdminPage/>}></Route>
 				</Routes>
 			</BrowserRouter>
 		</AuthProvider>

@@ -2,7 +2,6 @@ const express = require("express")
 const cors = require("cors")
 const bcrypt = require("bcryptjs")
 const {MongoClient} = require("mongodb")
-const ObjectId = require("mongodb").ObjectId
 
 const app=express()
 
