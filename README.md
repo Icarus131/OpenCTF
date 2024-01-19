@@ -6,7 +6,7 @@ A KISS(Keep It Stupid Simple) CTF platform.
 ![solving](./preview/solving.png)
 
 # Instructions
-    * Execute `npm i` in both the client and server directories.
-    * Run `npm start` in the server directory.
-    * Run `npm run dev` in the client directory.
-    * The website should be running on `http://localhost:5173`
+ * Execute `npm i` in both the client and server directories.
+ * Run `npm start` in the server directory.
+ * Run `npm run dev` in the client directory.
+ * The website should be running on `http://localhost:5173`
